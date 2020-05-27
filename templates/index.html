@@ -1,17 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-        <script src="{{ url_for('static', filename='index.js') }}"></script>
-        <title>Vote</title>
-    </head>
-    <body>
-        <div>Yes Votes: <span id="yes">{{ votes["yes"] }}</span></div>
-        <div>No Votes: <span id="no">{{ votes["no"] }}</span></div>
-        <div>Maybe Votes: <span id="maybe">{{ votes["maybe"] }}<span></div>
-        <hr>
-        <button data-vote="yes">Yes</button>
-        <button data-vote="no">No</button>
-        <button data-vote="maybe">Maybe</button>
-    </body>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+
+
+    <title></title>
+</head>
+<body>
+
+   
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav">
+
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+
+
+
+          <li class="nav-item">
+
+            <a class="nav-link" href="{{ url_for('logout') }}">Logout </a>
+
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link">  {{  user_logged  }}  </a>
+          </li>
+
+
+  
+        </ul>
+
+      </div>
+
+    </nav>
+
+
+
+ <h5> Coonected </h5>
+
+
+    <div>Yes Votes: <span id="yes">{{ votes["yes"] }}</span></div>
+    <div>No Votes: <span id="no">{{ votes["no"] }}</span></div>
+    <div>Maybe Votes: <span id="maybe">{{ votes["maybe"] }}<span></div>
+    <hr>
+    <button data-vote="yes">Yes</button>
+    <button data-vote="no">No</button>
+    <button data-vote="maybe">Maybe</button>
+
+</body>
 </html>
