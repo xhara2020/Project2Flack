@@ -10,7 +10,7 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 <script src="{{ url_for('static', filename='index.js') }}"></script>
 
-<script src="{{ url_for('static', filename='task.js') }}"></script>
+
 
 
     <title></title>
@@ -72,35 +72,19 @@
     <button data-vote="maybe">Maybe</button>
 
 
-
-
-     <form action="{{ url_for('loguser') }}" method="POST">
-
-        <p></p>
-
-          <div class="form-group">
-              <input class="form-control" name="sometext" placeholder="Text Here">
-          </div>
-
-
-
-
+    <div>
+      
+      <form id = "chat-table">
         
-          <div class="form-group">
-              <button class="btn btn-primary">Submit</button>
-          </div>
+        <input type="" name="" >
+
+        <button> Submit </button>
 
       </form>
 
+    </div>
 
-
-      <p></p>
-        <ul id="tasks">
-        </ul>
-        <form id="new-task">
-            <input id="task" autocomplete="off" autofocus placeholder="New Task" type="text">
-            <input id="submit" type="submit">
-        </form>
+    <h3 id = "header-msg" ></h3>
 
 
 </div>

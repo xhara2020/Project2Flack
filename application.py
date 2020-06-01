@@ -30,6 +30,7 @@ socketio = SocketIO(app)
 
 votes = {"yes": 0, "no": 0, "maybe": 0}
 
+msg = "First Msg"
 
 
 @app.route("/" , methods=["POST","GET"])
@@ -55,7 +56,7 @@ def index():
 
 		
 		# Render template search.html and return books query result
-		return render_template("index.html", user_logged = user_logged , votes=votes)
+		return render_template("index.html", user_logged = user_logged , votes=votes , msg = msg )
 
 
 
@@ -79,6 +80,17 @@ def vote(data):
     votes[selection] += 1
 
     emit("vote totals", votes, broadcast=True)
+
+
+
+@socketio.on("submit msg")
+
+def msg(data):
+
+
+	msg = data  + "Server Respond"
+
+	emit("msg user", msg, broadcast=True )
 
 
 

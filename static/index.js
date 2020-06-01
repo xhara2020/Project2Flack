@@ -21,4 +21,28 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#no').innerHTML = data.no;
         document.querySelector('#maybe').innerHTML = data.maybe;
     });
+
+
+
+    socket.on ( 'chat' , data => {
+
+        document.querySelector('#chat-table').onsubmit = () => {
+
+
+            const msg = 'submit';
+
+            socket.emit ('submit msg', msg )
+
+        };
+
+    });
+
+
+    socket.on ('msg user', msg => {
+
+        document.querySelector('#header-msg').innerHTML = msg;
+
+        
+    });
+
 });
